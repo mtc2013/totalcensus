@@ -43,21 +43,6 @@ download_census <- function(survey, year, states = c(states_DC, "US", "PR")){
 #'
 
 download_generated_data <- function(){
-    # get user permission
-    cat(paste(
-        "Do you want to download data generated from decennial census 2010?",
-        "This dataset is necessary for processing all summary files."
-    ))
-    continue <- switch(
-        menu(c("yes", "no")),
-        TRUE,
-        FALSE
-    )
-    if (!continue){
-        stop("You choose not to download data.")
-    }
-
-
     # total number of files expected in "generated_data/"
     total_files <- 426  # last version 424
 
@@ -602,4 +587,3 @@ convert_geo_txt2csv_acs1year_ <- function(txt_file, year){
 
     return(geo)
 }
-
