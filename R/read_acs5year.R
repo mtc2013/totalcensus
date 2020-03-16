@@ -132,24 +132,7 @@ read_acs5year <- function(year,
         }
     }
     if (length(not_downloaded) > 0){
-        cat(paste0(
-            "Do you want to download ",
-            year,
-            " ACS 5-year survey summary files of states ",
-            paste0(not_downloaded, collapse = ", "),
-            " and save it to your computer? ",
-            "It is necessary for extracting the data."
-        ))
-        continue <- switch(
-            menu(c("yes", "no")),
-            TRUE,
-            FALSE
-        )
-        if (continue){
-            download_census("acs5", year, not_downloaded)
-        } else {
-            stop("You choose not to download data.")
-        }
+      download_census("acs5", year, not_downloaded)
     }
 
 
