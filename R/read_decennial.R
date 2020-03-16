@@ -145,12 +145,7 @@ read_decennial <- function(year,
     }
     if (length(not_downloaded) > 0){
           download_census("decennial", year, not_downloaded)
-    } else {
-          stop("You choose not to download data.")
-      }
     }
-
-
 
     # turn off warning, fread() gives warnings when read non-scii characters.
     options(warn = -1)
